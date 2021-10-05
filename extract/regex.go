@@ -218,7 +218,7 @@ var (
 
 	// Mentions
 	atSigns            = regexp.MustCompile(`[` + atSignChars + `]`)
-	validMentionOrList = regexp.MustCompile(`(?i)([^a-zA-Z0-9_!#$%&*` + atSignChars + `]|^|^\s*RT:?)([` + atSignChars + `]+)([a-z0-9_]{1,20})(/[a-z][a-z0-9_-]{0,24})?`)
+	validMentionOrList = regexp.MustCompile(`(?i)([^a-zA-Z0-9_!#$%&*` + atSignChars + `]|^|^\s*RT:?)([` + atSignChars + `]+)([a-z0-9_]{1,30})(/[a-z][a-z0-9_-]{0,24})?`)
 
 	validReply = regexp.MustCompile(`^(?:` + unicodeSpacesSet + `)*([` + atSignChars + `])([a-zA-Z0-9_]{1,20})`)
 

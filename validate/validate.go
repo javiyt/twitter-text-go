@@ -6,12 +6,12 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/kylemcc/twitter-text-go/extract"
+	"github.com/javiyt/twitter-text-go/extract"
 	"golang.org/x/text/unicode/norm"
 )
 
 const (
-	maxLength           = 140
+	maxLength           = 280
 	shortUrlLength      = 23
 	shortHttpsUrlLength = 23
 	invalidChars        = "\uFFFE\uFEFF\uFFFF\u202A\u202B\u202C\u202D\u202E"
