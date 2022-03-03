@@ -34,9 +34,9 @@ func TestTweetIsValid(t *testing.T) {
 
 	for _, testCase := range tweetTests.([]interface{}) {
 		test := testCase.(map[interface{}]interface{})
-		text, _ := test["text"]
-		description, _ := test["description"]
-		expected, _ := test["expected"]
+		text := test["text"]
+		description := test["description"]
+		expected := test["expected"]
 
 		actual := TweetIsValid(text.(string))
 		if actual != expected {
