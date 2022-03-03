@@ -34,9 +34,9 @@ func TestUrlIsValid(t *testing.T) {
 
 	for _, testCase := range urlTests.([]interface{}) {
 		test := testCase.(map[interface{}]interface{})
-		text, _ := test["text"]
-		description, _ := test["description"]
-		expected, _ := test["expected"]
+		text := test["text"]
+		description := test["description"]
+		expected := test["expected"]
 
 		actual := UrlIsValid(text.(string), true, true)
 		if actual != expected {
@@ -72,9 +72,9 @@ func TestUrlWithoutProtocol(t *testing.T) {
 
 	for _, testCase := range urlTests.([]interface{}) {
 		test := testCase.(map[interface{}]interface{})
-		text, _ := test["text"]
-		description, _ := test["description"]
-		expected, _ := test["expected"]
+		text := test["text"]
+		description := test["description"]
+		expected := test["expected"]
 
 		actual := UrlIsValid(text.(string), false, true)
 		if actual != expected {

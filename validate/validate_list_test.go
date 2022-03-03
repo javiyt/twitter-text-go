@@ -34,9 +34,9 @@ func TestListIsValid(t *testing.T) {
 
 	for _, testCase := range listTests.([]interface{}) {
 		test := testCase.(map[interface{}]interface{})
-		text, _ := test["text"]
-		description, _ := test["description"]
-		expected, _ := test["expected"]
+		text := test["text"]
+		description := test["description"]
+		expected := test["expected"]
 
 		actual := ListIsValid(text.(string))
 		if actual != expected {

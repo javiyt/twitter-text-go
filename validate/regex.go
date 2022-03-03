@@ -2,8 +2,6 @@ package validate
 
 import "regexp"
 
-//
-//    # These URL validation pattern strings are based on the ABNF from RFC 3986
 const (
 	validateUrlUnreserved = `[a-z0-9\-._~]`
 	validateUrlPctEncoded = `(?:%[0-9-a-fA-F]{2})`
@@ -55,10 +53,6 @@ const (
 		`(?:[a-z0-9]|[^\x00-\x7f])(?:(?:[a-z0-9\-]|` +
 		`[^\x00-\x7f])*(?:[a-z0-9]|[^\x00-\x7f]))?)`
 
-	validateurlUnicodeDomainSegment = `(?:` +
-		`(?:[a-z0-9]|[^\x00-\x7f])(?:(?:[a-z0-9\-]|` +
-		`[^\x00-\x7f])*(?:[a-z0-9]|[^\x00-\x7f]))?)`
-
 	validateUrlUnicodeDomainTld = `(?:` +
 		`(?:[a-z]|[^\x00-\x7f])(?:(?:[a-z0-9\-]|` +
 		`[^\x00-\x7f])*(?:[a-z0-9]|[^\x00-\x7f]))?)`
@@ -85,7 +79,6 @@ const (
 		`(` + validateUrlHost + `)` + // $2 host
 		`(?::(` + validateUrlPort + `))?\z` // $3 port
 
-	validateUrlScheme   = `\A(?:[a-z][a-z0-9+\-.]*)\z`
 	validateUrlPath     = `\A(/` + validateUrlPchar + `*)*\z`
 	validateUrlQuery    = `\A(` + validateUrlPchar + `|/|\?)*\z`
 	validateUrlFragment = `\A(` + validateUrlPchar + `|/|\?)*\z`
@@ -113,7 +106,6 @@ const (
 
 var (
 	validateUrlUnencodedRe        = regexp.MustCompile(`(?i)` + validateUrlUnencoded)
-	validateUrlSchemeRe           = regexp.MustCompile(`(?i)` + validateUrlScheme)
 	validateUrlPathRe             = regexp.MustCompile(`(?i)` + validateUrlPath)
 	validateUrlQueryRe            = regexp.MustCompile(`(?i)` + validateUrlQuery)
 	validateUrlFragmentRe         = regexp.MustCompile(`(?i)` + validateUrlFragment)

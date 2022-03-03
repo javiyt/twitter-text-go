@@ -20,8 +20,6 @@ const (
 
 	unicodeSpacesSet = `[` + unicodeSpaces + `]`
 
-	controlChars = "\x00-\x1F\x7F"
-
 	invalidChars = "\uFFFE\uFEFF\uFFFF\u202A\u202B\u202C\u202D\u202E"
 
 	latinAccentChars = "\u00c0-\u00d6\u00d8-\u00f6\u00f8-\u00ff" + // Latin-1
@@ -187,7 +185,6 @@ const (
 	validHashtagGroupHash = 1
 	validHashtagGroupTag  = 2
 
-	validMentionOrListGroupBefore   = 1
 	validMentionOrListGroupAt       = 2
 	validMentionOrListGroupUsername = 3
 	validMentionOrListGroupList     = 4
@@ -195,17 +192,12 @@ const (
 	validReplyGroupAt       = 1
 	validReplyGroupUsername = 2
 
-	validUrlGroupAll         = 1
-	validUrlGroupBefore      = 2
-	validUrlGroupUrl         = 3
-	validUrlGroupProtocol    = 4
-	validUrlGroupDomain      = 5
-	validUrlGroupPort        = 6
-	validUrlGroupPath        = 7
-	validUrlGroupQueryString = 8
+	validUrlGroupBefore   = 2
+	validUrlGroupUrl      = 3
+	validUrlGroupProtocol = 4
+	validUrlGroupDomain   = 5
+	validUrlGroupPath     = 7
 
-	validCashtagGroupBefore  = 1
-	validCashtagGroupDollar  = 2
 	validCashtagGroupCashtag = 3
 )
 
@@ -214,10 +206,7 @@ var (
 	// Hash tag
 	validHashtag           = regexp.MustCompile(`(?i)(?:` + hashtagBoundary + `)` + `([#＃])(` + hashtagAlphaNumericSet + `*` + hashtagAlphaSet + hashtagAlphaNumericSet + `*)`)
 	invalidHashtagMatchEnd = regexp.MustCompile(`\A(?:[#＃]|://)`)
-	rtlCharacters          = regexp.MustCompile("[\u0600-\u06FF\u0750-\u077F\u0590-\u05FF\uFE70-\uFEFF]")
 
-	// Mentions
-	atSigns            = regexp.MustCompile(`[` + atSignChars + `]`)
 	validMentionOrList = regexp.MustCompile(`(?i)([^a-zA-Z0-9_!#$%&*` + atSignChars + `]|^|^\s*RT:?)([` + atSignChars + `]+)([a-z0-9_]{1,30})(/[a-z][a-z0-9_-]{0,24})?`)
 
 	validReply = regexp.MustCompile(`^(?:` + unicodeSpacesSet + `)*([` + atSignChars + `])([a-zA-Z0-9_]{1,20})`)
