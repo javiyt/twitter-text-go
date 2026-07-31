@@ -1,14 +1,14 @@
 package validate
 
 import (
-	"io/ioutil"
+	"os"
 	"testing"
 
 	goyaml "gopkg.in/yaml.v1"
 )
 
 func TestTweetIsValid(t *testing.T) {
-	contents, err := ioutil.ReadFile(validateYmlPath)
+	contents, err := os.ReadFile(validateYmlPath)
 	if err != nil {
 		t.Errorf("Error reading validate.yml: %v", err)
 		t.FailNow()

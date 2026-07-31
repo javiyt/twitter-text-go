@@ -2,14 +2,14 @@ package extract
 
 import (
 	"fmt"
-	"io/ioutil"
+	"os"
 	"testing"
 
 	goyaml "gopkg.in/yaml.v1"
 )
 
 func TestExtractCashtags(t *testing.T) {
-	contents, err := ioutil.ReadFile(extractYmlPath)
+	contents, err := os.ReadFile(extractYmlPath)
 	if err != nil {
 		t.Errorf("Error reading extract.yml: %v", err)
 		t.FailNow()
@@ -57,7 +57,7 @@ func TestExtractCashtags(t *testing.T) {
 }
 
 func TestExtractCashtagsWithIndices(t *testing.T) {
-	contents, err := ioutil.ReadFile(extractYmlPath)
+	contents, err := os.ReadFile(extractYmlPath)
 	if err != nil {
 		t.Errorf("Error reading extract.yml: %v", err)
 		t.FailNow()

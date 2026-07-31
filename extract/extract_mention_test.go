@@ -2,14 +2,14 @@ package extract
 
 import (
 	"fmt"
-	"io/ioutil"
+	"os"
 	"testing"
 
 	goyaml "gopkg.in/yaml.v1"
 )
 
 func TestExtractMentions(t *testing.T) {
-	contents, err := ioutil.ReadFile(extractYmlPath)
+	contents, err := os.ReadFile(extractYmlPath)
 	if err != nil {
 		t.Errorf("Error reading extract.yml: %v", err)
 		t.FailNow()
@@ -57,7 +57,7 @@ func TestExtractMentions(t *testing.T) {
 }
 
 func TestExtractMentionsWithIndices(t *testing.T) {
-	contents, err := ioutil.ReadFile(extractYmlPath)
+	contents, err := os.ReadFile(extractYmlPath)
 	if err != nil {
 		t.Errorf("Error reading extract.yml: %v", err)
 		t.FailNow()
@@ -130,7 +130,7 @@ func TestExtractMentionsWithIndices(t *testing.T) {
 }
 
 func TestExtractMentionsOrListsWithIndices(t *testing.T) {
-	contents, err := ioutil.ReadFile(extractYmlPath)
+	contents, err := os.ReadFile(extractYmlPath)
 	if err != nil {
 		t.Errorf("Error reading extract.yml: %v", err)
 		t.FailNow()
@@ -213,7 +213,7 @@ func TestExtractMentionsOrListsWithIndices(t *testing.T) {
 }
 
 func TestExtractReplyScreenname(t *testing.T) {
-	contents, err := ioutil.ReadFile(extractYmlPath)
+	contents, err := os.ReadFile(extractYmlPath)
 	if err != nil {
 		t.Errorf("Error reading extract.yml: %v", err)
 		t.FailNow()
