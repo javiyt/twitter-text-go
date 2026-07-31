@@ -7,21 +7,15 @@ updates:
     interval: daily
   assignees:
   - javiyt
-  reviewers:
-  - javiyt
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
     interval: daily
   assignees:
   - javiyt
-  reviewers:
-  - javiyt
 - package-ecosystem: docker
   directory: "/"
   schedule:
     interval: daily
   assignees:
-  - javiyt
-  reviewers:
   - javiyt

@@ -1,14 +1,14 @@
 package validate
 
 import (
-	"io/ioutil"
+	"os"
 	"testing"
 
 	goyaml "gopkg.in/yaml.v1"
 )
 
 func TestUrlIsValid(t *testing.T) {
-	contents, err := ioutil.ReadFile(validateYmlPath)
+	contents, err := os.ReadFile(validateYmlPath)
 	if err != nil {
 		t.Errorf("Error reading validate.yml: %v", err)
 		t.FailNow()
@@ -46,7 +46,7 @@ func TestUrlIsValid(t *testing.T) {
 }
 
 func TestUrlWithoutProtocol(t *testing.T) {
-	contents, err := ioutil.ReadFile(validateYmlPath)
+	contents, err := os.ReadFile(validateYmlPath)
 	if err != nil {
 		t.Errorf("Error reading validate.yml: %v", err)
 		t.FailNow()
