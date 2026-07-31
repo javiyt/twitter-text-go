@@ -2,14 +2,14 @@ package extract
 
 import (
 	"fmt"
-	"io/ioutil"
+	"os"
 	"testing"
 
 	goyaml "gopkg.in/yaml.v1"
 )
 
 func TestExtractUrls(t *testing.T) {
-	contents, err := ioutil.ReadFile(extractYmlPath)
+	contents, err := os.ReadFile(extractYmlPath)
 	if err != nil {
 		t.Errorf("Error reading extract.yml: %v", err)
 		t.FailNow()
@@ -58,7 +58,7 @@ func TestExtractUrls(t *testing.T) {
 }
 
 func TestExtractUrlsWithIndices(t *testing.T) {
-	contents, err := ioutil.ReadFile(extractYmlPath)
+	contents, err := os.ReadFile(extractYmlPath)
 	if err != nil {
 		t.Errorf("Error reading extract.yml: %v", err)
 		t.FailNow()
@@ -135,7 +135,7 @@ func TestExtractUrlsWithIndices(t *testing.T) {
 }
 
 func TestTlds(t *testing.T) {
-	contents, err := ioutil.ReadFile(tldYmlPath)
+	contents, err := os.ReadFile(tldYmlPath)
 	if err != nil {
 		t.Errorf("Error reading extract.yml: %v", err)
 		t.FailNow()

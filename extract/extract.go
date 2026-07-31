@@ -104,7 +104,7 @@ func (e *entitiesT) removeOverlappingEntities() {
 	prev = entities[0]
 	result = append(result, prev)
 	for _, cur = range entities[1:] {
-		if !(prev.Range.Stop > cur.Range.Start) {
+		if prev.Range.Stop <= cur.Range.Start {
 			result = append(result, cur)
 		}
 		prev = cur
