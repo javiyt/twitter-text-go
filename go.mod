@@ -1,6 +1,6 @@
 module github.com/javiyt/twitter-text-go
 
-go 1.26.0
+go 1.27.3
 
 require (
 	golang.org/x/text v0.43.0
